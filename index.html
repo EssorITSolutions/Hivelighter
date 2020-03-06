@@ -1,0 +1,107 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	
+    <!-- stylesheet CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="css/StyleSheet.css" rel="stylesheet">
+	
+	<!-- page title -->
+    <title>Hivelighter</title>
+</head>
+
+<body>
+	<!--Start, Carousel Image-->
+		<div id="carouselImage" class="carousel slide carousel-fade" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+				   <div class="CarouselBackgroundImage carouselImage1"></div>
+				</div>
+				<div class="carousel-item">
+					<div class="CarouselBackgroundImage carouselImage2"></div>
+				</div>
+				<div class="carousel-item">
+					<div class="CarouselBackgroundImage carouselImage3"></div>
+				</div>
+			</div>
+		</div>
+	<!--End, Carousel Image-->
+	
+	<!--Start, Logo-->
+        <div class="px-xl-5 px-lg-5 px-md-3 px-4 pt-5 pb-2">
+            <img src="images/logo.png" alt="Hivelighter"/>
+        </div>
+	<!-- End, Logo -->
+	<!--Start, Carousel Content-->
+        <div id="carouselContent" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselContent" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselContent" data-slide-to="1" ></li>
+                <li data-target="#carouselContent" data-slide-to="2" ></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="px-xl-5 px-lg-5 px-md-3 px-4 pb-5">
+                        <h1 class="text-uppercase font-weight-bold"><span class="animation-bg"><span class="animation-effect"></span>Never Lose</span> the best part of articles</h1>
+                        <p class="text-dark">Highlights your favourite part of article and keep them in one place</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="px-xl-5 px-lg-5 px-md-3 px-4 pb-5">
+                        <h1 class="text-uppercase font-weight-bold">Get people <span class="animation-bg"><span class="animation-effect"></span>to the point</span> faster</h1>
+                        <p class="text-dark">Send people to the important parts of articles instantly.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="px-xl-5 px-lg-5 px-md-3 px-4 pb-5">
+                        <h1 class="text-uppercase font-weight-bold"><span class="animation-bg"><span class="animation-effect"></span>Connect Deeper</span> with what matters Most</h1>
+                        <p class="text-dark">Read what everyone is highlighting from across the web.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="px-xl-5 px-lg-5 px-md-3 px-4 pb-3">
+                <a href="login.html" class="text-dark">SKIP</a>
+            </div>
+        </div>
+	<!-- End, Carousel Content -->
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>    
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>        
+        $(document).ready(function () {
+            $(".carousel").carousel({
+                interval:6000,
+                pause: true, 
+            });
+            $('.carousel-item.active').addClass('Show-animation-effect');
+            $("#HivelighterContent").on('slid.bs.carousel', function () {
+                $('.carousel-item.active').addClass('Show-animation-effect');
+            });
+            $(".carousel .carousel-inner").swipe({
+                swipeLeft: function (event, direction, distance, duration, fingerCount) {
+                    $(".carousel.slide").carousel('next');     
+                    $('.carousel-item.active').addClass('Show-animation-effect'); 
+                },
+                swipeRight: function () {
+                    $(".carousel.slide").carousel('prev');
+                    $('.carousel-item.active').addClass('Show-animation-effect'); 
+                }
+            });                                                  
+            $('.carousel .carousel-inner').on('dragstart', 'a', function () {
+                return false;
+            });
+
+        });
+    </script>
+</body>
+</html>
